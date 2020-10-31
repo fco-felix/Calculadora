@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valor1"
+        app:layout_constraintBottom_toBottomOf="@+id/edValor1"
+        app:layout_constraintEnd_toStartOf="@+id/edValor1"/>
+
+    <EditText
+        android:id="@+id/edValor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/valor2"
+        android:ems="10"
+        android:inputType="numberSigned|number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/btSoma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edValor1"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valor2"
+        app:layout_constraintBottom_toBottomOf="@+id/edValor2"
+        app:layout_constraintEnd_toStartOf="@+id/edValor2"/>
+
+    <EditText
+        android:id="@+id/edValor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/valor1"
+        android:ems="10"
+        android:inputType="numberSigned|number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/edValor2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/btSoma"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/edResultado"
+        app:layout_constraintEnd_toStartOf="@+id/btSubtrai"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edValor2" />
+
+    <Button
+        android:id="@+id/btSubtrai"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="@+id/btSoma"
+        app:layout_constraintEnd_toStartOf="@+id/btMultiplica"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btSoma" />
+
+    <Button
+        android:id="@+id/btDivide"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="/"
+        app:layout_constraintBottom_toBottomOf="@+id/btSoma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btMultiplica" />
+
+    <Button
+        android:id="@+id/btMultiplica"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="*"
+        app:layout_constraintBottom_toBottomOf="@+id/btSoma"
+        app:layout_constraintEnd_toStartOf="@+id/btDivide"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btSubtrai" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado"
+        app:layout_constraintBottom_toBottomOf="@+id/edResultado"
+        app:layout_constraintEnd_toStartOf="@+id/edResultado" />
+
+    <EditText
+        android:id="@+id/edResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="none|numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSoma" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
