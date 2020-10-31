@@ -16,8 +16,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         if (! validarValor(edValor1) || ! validarValor(edValor2))
             return
+        val calcular = Calcular()
 
-        Toast.makeText(applicationContext, "Passou no teste", Toast.LENGTH_LONG).show()
+        var resultado : Float?
+        resultado = 0f
+
+        when (v?.id) {
+            R.id.btSoma -> resultado = calcular.Somar(edValor1.text.toString().toFloat() , edValor2.text.toString().toFloat())
+            R.id.btSubtrai -> resultado = calcular.Subtrair(edValor1.text.toString().toFloat() , edValor2.text.toString().toFloat())
+            R.id.btMultiplica -> resultado = calcular.Multiplicar(edValor1.text.toString().toFloat() , edValor2.text.toString().toFloat())
+            R.id.btDivide -> resultado = calcular.Dividir(edValor1.text.toString().toFloat() , edValor2.text.toString().toFloat())
+        }
+
+        edResultado.setText(resultado.toString())
     }
 
     fun validarValor(edit : EditText) : Boolean {
